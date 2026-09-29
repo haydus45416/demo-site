@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cuzzins Owner Dashboard — Demo</title><link rel="stylesheet" href="style.css"></head>
+<body class="admin"><div class="adminbar"><strong>CUZZINS ADMIN</strong><span>Owner Demo · Not connected to Facebook</span></div>
+<div class="adminwrap"><div class="kicker">The important part of the SaaS</div><h1 style="font-size:60px">One update.<br>Everywhere.</h1><p class="lead">This is the owner-facing concept: simple enough to use from a phone behind the bar.</p>
+<div class="adminnav"><span class="pill">Happenings</span><span class="pill">Menu</span><span class="pill">Hours</span><span class="pill">Photos</span><span class="pill">Social</span></div>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:22px">
+<form class="form" onsubmit="event.preventDefault();alert('Demo only — this would publish to the website and connected social channels.');">
+<h3>Add a Happening</h3><label>What is happening?</label><input value="Fish Friday">
+<label>Date</label><input type="date" value="2026-09-25">
+<label>Time</label><input value="11:00 AM – Until Gone">
+<label>Category</label><select><option>Food Special</option><option>Live Music</option><option>Game Day</option><option>Volleyball</option><option>Pool</option><option>Announcement</option></select>
+<label>What should customers know?</label><textarea>Fish Friday at Cuzzins. Catfish, fries and slaw. Ask the bar for tonight's price.</textarea>
+<div class="checks"><label style="display:inline"><input type="checkbox" checked> Website</label><label style="display:inline"><input type="checkbox" checked> Facebook</label><label style="display:inline"><input type="checkbox" checked> Generate graphic</label></div>
+<button class="btn" type="submit">Publish Everywhere</button></form>
+<div class="preview"><div class="kicker">Preview</div><h3>Fish Friday</h3><div class="eventdate">Friday · Food Special</div><p>Fish Friday at Cuzzins. Catfish, fries and slaw. Ask the bar for tonight's price.</p><hr><strong>Publishing to:</strong><p>✓ Cuzzins website<br>✓ Facebook<br>✓ Event archive</p><div class="band">Expires automatically after the event.</div></div>
+</div></div></body></html>
+<section class="section" style="padding:40px 0 0"><div class="wrap"><div class="form">
+<div class="sectionhead"><div><div class="kicker">Menu management</div><h2 style="font-size:34px">Foods & Categories</h2></div><button class="btn" type="button" onclick="addFood()">+ Add Food</button></div>
+<p class="small">Owners can add, remove, reorder and edit menu items without touching the website. Changes can publish immediately or be saved as a draft.</p>
+<div id="foodList">
+<div class="card foodrow"><div class="foodgrid"><div><label>Food</label><input value="Cuzzins Burger"></div><div><label>Category</label><select><option selected>Burgers</option><option>Wings</option><option>Sandwiches</option><option>Starters</option><option>Fish</option><option>Drinks</option></select></div><div><label>Price</label><input value="12.99"></div><button class="btn alt" type="button" onclick="this.closest('.foodrow').remove()">Remove</button></div><label>Description</label><input value="Classic burger with your choice of toppings."><div class="checks"><label style="display:inline"><input type="checkbox" checked> Visible on menu</label><label style="display:inline"><input type="checkbox"> Featured</label></div></div>
+<div class="card foodrow"><div class="foodgrid"><div><label>Food</label><input value="Fish Basket"></div><div><label>Category</label><select><option>Burgers</option><option>Wings</option><option>Sandwiches</option><option>Starters</option><option selected>Fish</option><option>Drinks</option></select></div><div><label>Price</label><input value="13.99"></div><button class="btn alt" type="button" onclick="this.closest('.foodrow').remove()">Remove</button></div><label>Description</label><input value="Served with fries and slaw."><div class="checks"><label style="display:inline"><input type="checkbox" checked> Visible on menu</label><label style="display:inline"><input type="checkbox" checked> Featured</label></div></div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><button class="btn" type="button" onclick="alert('Demo only — the real system would save the menu.')">Save Menu</button><button class="btn alt" type="button" onclick="alert('Demo only — the real system would publish the menu.')">Publish Menu</button></div>
+</div></div></section>
+
+<section class="section" style="padding:30px 0"><div class="wrap"><div class="form"><div class="kicker">Categories</div><h3>Manage Menu Categories</h3><div class="checks"><span class="pill">Burgers</span><span class="pill">Wings</span><span class="pill">Sandwiches</span><span class="pill">Starters</span><span class="pill">Fish</span><span class="pill">Drinks</span><button class="pill" type="button" onclick="alert('Demo only — add a category')">+ Add Category</button></div></div></div></section>
+<script>
+function addFood(){const list=document.getElementById('foodList');const d=document.createElement('div');d.className='card foodrow';d.innerHTML=`<div class="foodgrid"><div><label>Food</label><input placeholder="New menu item"></div><div><label>Category</label><select><option>Burgers</option><option>Wings</option><option>Sandwiches</option><option>Starters</option><option>Fish</option><option>Drinks</option></select></div><div><label>Price</label><input placeholder="0.00"></div><button class="btn alt" type="button" onclick="this.closest('.foodrow').remove()">Remove</button></div><label>Description</label><input placeholder="Short description"><div class="checks"><label style="display:inline"><input type="checkbox" checked> Visible on menu</label><label style="display:inline"><input type="checkbox"> Featured</label></div>`;list.appendChild(d)}
+</script>
